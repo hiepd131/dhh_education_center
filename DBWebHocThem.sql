@@ -1,4 +1,4 @@
-﻿USE [master]
+USE [master]
 GO
 /****** Object:  Database [DBWebHocThem]    Script Date: 3/15/2023 2:31:59 AM ******/
 CREATE DATABASE [DBWebHocThem]
@@ -1874,24 +1874,6 @@ BEGIN
 	--SELECT L.* FROM LOP L INNER JOIN KhoaHoc KH ON L.KhoaHoc = KH.ID AND L.MonHoc = KH.MonHoc AND L.Levels = KH.Levels INNER JOIN PhieuDangKy PDK ON PDK.Lop = L.ID WHERE L.GiaoVien IS NULL AND KH.NgayKhaiGiang >= GETDATE() AND PDK.XacNhan = 0
 END
 GO
-USE [master]
-GO
-ALTER DATABASE [DBWebHocThem] SET  READ_WRITE 
-GO
-
-
-/****** Object:  Trigger [dbo].[T_EMAIL]    Script Date: 3/24/2023 10:55:49 PM ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
--- =============================================
--- Author:		<Author,,Name>
--- Create date: <Create Date,,>
--- Description:	<Description,,>
--- =============================================
 CREATE TRIGGER [dbo].[T_EMAIL]
    ON  [dbo].[AspNetUsers]
    FOR INSERT,DELETE,UPDATE
@@ -1908,10 +1890,7 @@ GO
 
 
 /****** Object:  Trigger [dbo].[T_ROLE]    Script Date: 3/24/2023 10:56:11 PM ******/
-SET ANSI_NULLS ON
-GO
 
-SET QUOTED_IDENTIFIER ON
 GO
 
 -- =============================================
@@ -1933,10 +1912,7 @@ ALTER TABLE [dbo].[AspNetUsers] ENABLE TRIGGER [T_ROLE]
 GO
 
 /****** Object:  Trigger [dbo].[T_GV1]    Script Date: 3/24/2023 10:57:05 PM ******/
-SET ANSI_NULLS ON
-GO
 
-SET QUOTED_IDENTIFIER ON
 GO
 
 
@@ -1965,10 +1941,7 @@ ALTER TABLE [dbo].[Lop] ENABLE TRIGGER [T_GV1]
 GO
 
 /****** Object:  Trigger [dbo].[T_Confirm]    Script Date: 3/24/2023 10:59:52 PM ******/
-SET ANSI_NULLS ON
-GO
 
-SET QUOTED_IDENTIFIER ON
 GO
 
 -- =============================================
@@ -2042,10 +2015,7 @@ GO
 
 
 /****** Object:  Trigger [dbo].[T_DIEMTHI]    Script Date: 3/24/2023 11:01:28 PM ******/
-SET ANSI_NULLS ON
-GO
 
-SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TRIGGER [dbo].[T_DIEMTHI] ON [dbo].[PhieuDangKy] FOR INSERT,UPDATE
@@ -2074,10 +2044,7 @@ ALTER TABLE [dbo].[PhieuDangKy] ENABLE TRIGGER [T_DIEMTHI]
 GO
 
 /****** Object:  Trigger [dbo].[T_NANGCAPTAIKHOAN]    Script Date: 3/24/2023 11:02:07 PM ******/
-SET ANSI_NULLS ON
-GO
 
-SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TRIGGER [dbo].[T_NANGCAPTAIKHOAN] ON [dbo].[PhieuDangKy] FOR INSERT,UPDATE
@@ -2117,10 +2084,7 @@ ALTER TABLE [dbo].[PhieuDangKy] ENABLE TRIGGER [T_NANGCAPTAIKHOAN]
 GO
 
 /****** Object:  Trigger [dbo].[T_SOLUONG]    Script Date: 3/24/2023 11:02:17 PM ******/
-SET ANSI_NULLS ON
-GO
 
-SET QUOTED_IDENTIFIER ON
 GO
 
 -- =============================================
@@ -2145,10 +2109,7 @@ GO
 
 
 /****** Object:  Trigger [dbo].[T_TUYENDUNG]    Script Date: 3/24/2023 11:02:32 PM ******/
-SET ANSI_NULLS ON
-GO
 
-SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TRIGGER [dbo].[T_TUYENDUNG] ON [dbo].[PhieuDangKy] FOR INSERT,UPDATE
@@ -2187,10 +2148,7 @@ GO
 
 
 /****** Object:  Trigger [dbo].[T_DDG]    Script Date: 3/24/2023 11:03:02 PM ******/
-SET ANSI_NULLS ON
-GO
 
-SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TRIGGER [dbo].[T_DDG] ON [dbo].[PhieuDanhGia] FOR UPDATE, INSERT
@@ -2214,10 +2172,7 @@ GO
 
 
 /****** Object:  Trigger [dbo].[T_CA]    Script Date: 3/24/2023 11:05:10 PM ******/
-SET ANSI_NULLS ON
-GO
 
-SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TRIGGER [dbo].[T_CA] ON [dbo].[ThoiKhoaBieu] FOR UPDATE, INSERT
@@ -2242,10 +2197,6 @@ GO
 
 
 /****** Object:  Trigger [dbo].[T_KYTHI]    Script Date: 3/24/2023 11:03:36 PM ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TRIGGER [dbo].[T_KYTHI] ON [dbo].[ThoiKhoaBieu] FOR INSERT,UPDATE
@@ -2280,10 +2231,7 @@ ALTER TABLE [dbo].[ThoiKhoaBieu] ENABLE TRIGGER [T_KYTHI]
 GO
 
 /****** Object:  Trigger [dbo].[T_NGAY1]    Script Date: 3/24/2023 11:04:00 PM ******/
-SET ANSI_NULLS ON
-GO
 
-SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TRIGGER [dbo].[T_NGAY1] ON [dbo].[ThoiKhoaBieu] FOR UPDATE, INSERT
@@ -2303,12 +2251,7 @@ ALTER TABLE [dbo].[ThoiKhoaBieu] ENABLE TRIGGER [T_NGAY1]
 GO
 
 /****** Object:  Trigger [dbo].[T_USERNAME]    Script Date: 3/24/2023 11:04:14 PM ******/
-SET ANSI_NULLS ON
 GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
@@ -2327,4 +2270,3 @@ GO
 
 ALTER TABLE [dbo].[Users] ENABLE TRIGGER [T_USERNAME]
 GO
-
